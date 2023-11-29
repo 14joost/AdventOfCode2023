@@ -1,9 +1,12 @@
 import solutions.ExampleSolution;
 import solutions.Solution;
 
-public class AdventOfCode {
-    public static void main(String[] args){
+import java.io.IOException;
 
-    Solution example = new ExampleSolution(0);
-    }
+public class AdventOfCode {
+  public static void main(String[] args) throws IOException {
+
+    Solution example = new ExampleSolution();
+    example.solve(true);
+  }
 }
