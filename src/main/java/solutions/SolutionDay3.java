@@ -21,8 +21,7 @@ public class SolutionDay3 extends Solution {
     super(3);
   }
 
-  @Override
-  public void solve1(boolean isExample) throws IOException {
+  private List<Number> getNumbers(boolean isExample) throws IOException {
     var r = getReader(isExample);
     String line;
     coordinates = new ArrayList<>();
@@ -61,51 +60,21 @@ public class SolutionDay3 extends Solution {
         firstDigit = true;
       }
     }
-    int sum = numbers.stream().filter(Number::hasSymbolNeighbour).mapToInt(Number::getValue).sum();
+    return numbers;
+  }
 
+  @Override
+  public void solve1(boolean isExample) throws IOException {
+
+    var numbers = getNumbers(isExample);
+    int sum = numbers.stream().filter(Number::hasSymbolNeighbour).mapToInt(Number::getValue).sum();
     System.out.printf("The sum of the part numbers = %d!", sum);
   }
 
   @Override
   public void solve2(boolean isExample) throws IOException {
-    var r = getReader(isExample);
-    String line;
-    coordinates = new ArrayList<>();
-    y = 0;
-    while ((line = r.readLine()) != null) {
-      x = 0;
-      for (char c : line.toCharArray()) {
-        coordinates.add(new Coord(x, y, c));
-        x++;
-      }
-      y++;
-    }
 
-    List<Number> numbers = new ArrayList<>();
-    boolean firstDigit = true;
-
-    for (Coord coord : coordinates) {
-      if (firstDigit && coord.hasDigit()) {
-        List<Character> charList = new ArrayList<>();
-        var number = new Number();
-        number.setX1(coord.getX());
-        number.setYNum(coord.getY());
-        charList.add(coord.getValue());
-        int nextX = coord.getX() + 1;
-        while (nextX < x && coordinates.get(index(nextX, coord.getY())).hasDigit()) {
-          charList.add(coordinates.get(index(nextX, coord.getY())).getValue());
-          nextX++;
-        }
-        number.setValue(Integer.parseInt(Util.getStringRepresentation(charList)));
-        number.setX2(nextX - 1);
-        numbers.add(number);
-
-        firstDigit = false;
-      }
-      if (coord.getX() >= x - 1 || !coord.hasDigit()) {
-        firstDigit = true;
-      }
-    }
+    var numbers = getNumbers(isExample);
 
     var possibleGearNumberMap = new HashMap<Coord, List<Number>>();
     for (var possibleGear : coordinates.stream().filter(Coord::isPossibleGear).toList()) {

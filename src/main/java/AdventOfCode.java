@@ -11,9 +11,10 @@ public class AdventOfCode {
   public static void main(String[] args) throws IOException {
 
     int day = 3;
-    boolean isExample = false;
+    boolean isExample = true;
 
-    // getSolutions().get(day).solve1(isExample);
+    getSolutions().get(day).solve1(isExample);
+    System.out.println();
     getSolutions().get(day).solve2(isExample);
   }
 
