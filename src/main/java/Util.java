@@ -28,4 +28,12 @@ public final class Util {
   public static List<String> getSeparatedStrings(String string, String separator) {
     return getSeparatedStrings(string, separator, true);
   }
+
+  public static String getStringRepresentation(List<Character> list) {
+    StringBuilder builder = new StringBuilder(list.size());
+    for (Character ch : list) {
+      builder.append(ch);
+    }
+    return builder.toString();
+  }
 }
