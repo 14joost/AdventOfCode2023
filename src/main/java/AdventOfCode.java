@@ -2,7 +2,6 @@ package src.main.java;
 
 import src.main.java.solutions.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.List;
 public class AdventOfCode {
   public static void main(String[] args) throws IOException {
 
-    int day = 3;
+    int day = 4;
     boolean isExample = true;
 
     getSolutions().get(day).solve1(isExample);
@@ -18,7 +17,7 @@ public class AdventOfCode {
     getSolutions().get(day).solve2(isExample);
   }
 
-  private static List<Solution> getSolutions() throws FileNotFoundException {
+  private static List<Solution> getSolutions() {
 
     List<Solution> solutions = new ArrayList<>();
     Solution exampleSolution = new ExampleSolution();
@@ -30,6 +29,8 @@ public class AdventOfCode {
     solutions.add(solutionDay2);
     var solutionDay3 = new SolutionDay3();
     solutions.add(solutionDay3);
+    var solutionDay4 = new SolutionDay4();
+    solutions.add(solutionDay4);
 
     return solutions;
   }

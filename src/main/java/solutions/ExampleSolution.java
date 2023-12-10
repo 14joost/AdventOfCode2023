@@ -1,10 +1,9 @@
 package src.main.java.solutions;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ExampleSolution extends Solution {
-  public ExampleSolution() throws FileNotFoundException {
+  public ExampleSolution() {
     super(0);
   }
 

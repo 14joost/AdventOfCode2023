@@ -2,12 +2,11 @@ package src.main.java.solutions;
 
 import src.main.java.Util;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 
 public class SolutionDay1 extends Solution {
-  public SolutionDay1() throws FileNotFoundException {
+  public SolutionDay1() {
     super(1);
   }
 

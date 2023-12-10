@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import src.main.java.Util;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +16,7 @@ public class SolutionDay3 extends Solution {
   int y = 0;
   List<Coord> coordinates;
 
-  public SolutionDay3() throws FileNotFoundException {
+  public SolutionDay3() {
     super(3);
   }
 

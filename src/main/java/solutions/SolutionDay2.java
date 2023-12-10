@@ -2,14 +2,13 @@ package src.main.java.solutions;
 
 import src.main.java.Util;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class SolutionDay2 extends Solution {
-  public SolutionDay2() throws FileNotFoundException {
+  public SolutionDay2() {
     super(2);
   }
 
