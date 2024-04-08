@@ -9,10 +9,10 @@ import java.util.List;
 public class AdventOfCode {
   public static void main(String[] args) throws IOException {
 
-    int day = 4;
-    boolean isExample = true;
+    int day = 5;
+    boolean isExample = false;
 
-    getSolutions().get(day).solve1(isExample);
+    // getSolutions().get(day).solve1(isExample);
     System.out.println();
     getSolutions().get(day).solve2(isExample);
   }
@@ -31,6 +31,8 @@ public class AdventOfCode {
     solutions.add(solutionDay3);
     var solutionDay4 = new SolutionDay4();
     solutions.add(solutionDay4);
+    var solutionDay5 = new SolutionDay5();
+    solutions.add(solutionDay5);
 
     return solutions;
   }
